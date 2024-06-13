@@ -1,7 +1,5 @@
 <?php
 
-use FontLib\Table\Type\head;
-
 $dbPath = __DIR__ . '/database.sqlite';
 $pdo = new PDO("sqlite:$dbPath");
 
