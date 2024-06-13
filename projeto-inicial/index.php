@@ -4,9 +4,6 @@ $dbPath = __DIR__ . '/database.sqlite';
 $pdo = new PDO("sqlite:$dbPath");
 $videos = $pdo->query("SELECT * FROM VID010;")->fetchAll(PDO::FETCH_ASSOC);
 
-
-
-
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
