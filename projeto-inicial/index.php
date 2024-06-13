@@ -18,10 +18,10 @@
     <header>
 
         <nav class="cabecalho">
-            <a class="logo" href="./index.html"></a>
+            <a class="logo" href="./index.php"></a>
 
             <div class="cabecalho__icones">
-                <a href="./pages/enviar-video.html" class="cabecalho__videos"></a>
+                <a href="./pages/enviar-video.php" class="cabecalho__videos"></a>
                 <a href="./pages/login.html" class="cabecalho__sair">Sair</a>
             </div>
         </nav>
@@ -38,8 +38,8 @@
                 <img src="./img/logo.png" alt="logo canal alura">
                 <h3>Qual é o melhor hardware para programação com Mario Souto</h3>
                 <div class="acoes-video">
-                    <a href="./pages/enviar-video.html">Editar</a>
-                    <a href="./pages/enviar-video.html">Excluir</a>
+                    <a href="./pages/enviar-video.php">Editar</a>
+                    <a href="./pages/enviar-video.php">Excluir</a>
                 </div>
             </div>
         </li>
@@ -52,8 +52,8 @@
                 <img src="./img/logo.png" alt="logo canal alura">
                 <h3>Voltando ao mercado após a mmaternidade: Ana Silvério</h3>
                 <div class="acoes-video">
-                    <a href="./pages/enviar-video.html">Editar</a>
-                    <a href="./pages/enviar-video.html">Excluir</a>
+                    <a href="./pages/enviar-video.php">Editar</a>
+                    <a href="./pages/enviar-video.php">Excluir</a>
                 </div>
             </div>
         </li>
@@ -66,8 +66,8 @@
                 <img src="./img/logo.png" alt="logo canal alura">
                 <h3>Mercado de Trabalho | Desmistificando Mobile...</h3>
                 <div class="acoes-video">
-                    <a href="./pages/enviar-video.html">Editar</a>
-                    <a href="./pages/enviar-video.html">Excluir</a>
+                    <a href="./pages/enviar-video.php">Editar</a>
+                    <a href="./pages/enviar-video.php">Excluir</a>
                 </div>
             </div>
         </li>
@@ -80,8 +80,8 @@
                 <img src="./img/logo.png" alt="logo canal alura">
                 <h3>Conhecendo a linguagem Go | Hipsters.Talks</h3>
                 <div class="acoes-video">
-                    <a href="./pages/enviar-video.html">Editar</a>
-                    <a href="./pages/enviar-video.html">Excluir</a>
+                    <a href="./pages/enviar-video.php">Editar</a>
+                    <a href="./pages/enviar-video.php">Excluir</a>
                 </div>
             </div>
         </li>
