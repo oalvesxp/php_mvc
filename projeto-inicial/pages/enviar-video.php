@@ -20,11 +20,11 @@
     <header>
 
         <nav class="cabecalho">
-            <a class="logo" href="../index.html"></a>
+            <a class="logo" href="../"></a>
 
             <div class="cabecalho__icones">
-                <a href="./enviar-video.html" class="cabecalho__videos"></a>
-                <a href="../pages/login.html" class="cabecalho__sair">Sair</a>
+                <a href="./enviar-video.php" class="cabecalho__videos"></a>
+                <a href="../pages/login.php" class="cabecalho__sair">Sair</a>
             </div>
         </nav>
 
@@ -32,8 +32,8 @@
 
     <main class="container">
 
-        <form class="container__formulario">
-            <h2 class="formulario__titulo">Envie um vídeo!</h3>
+        <form class="container__formulario" action="../novo-video.php" method="POST">
+            <h2 class="formulario__titulo">Envie um vídeo!</h2>
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="url">Link embed</label>
                     <input name="url" class="campo__escrita" required
