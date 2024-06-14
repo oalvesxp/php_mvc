@@ -6,7 +6,7 @@ $pdo = new PDO("sqlite:$dbPath");
 $url = filter_input(INPUT_POST, 'url', FILTER_VALIDATE_URL);
 
 if ($url === false) {
-    header('Location: /index.php?success=0');
+    header('Location: /?success=0');
     exit();
 }
 
@@ -21,9 +21,9 @@ $stmt->bindValue(':url', $url);
 $stmt->bindValue(':title', $title);
 
 if ($stmt->execute() === false) {
-    header('Location: /index.php?success=0');
+    header('Location: /?success=0');
 
 } else {
-    header('Location: /index.php?success=1');
+    header('Location: /?success=1');
 
 }
