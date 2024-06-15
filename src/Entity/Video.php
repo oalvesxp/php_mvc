@@ -4,10 +4,12 @@ namespace Alura\Mvc\Entity;
 
 class Video 
 {
+    public readonly int $id;
+    public readonly string $url;
+
     public function __construct
     (
-        public readonly int $id,
-        public readonly string $url,
+        string $url,
         public readonly string $title
     )
     {

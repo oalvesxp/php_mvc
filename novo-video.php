@@ -1,5 +1,8 @@
 <?php
 
+use Alura\Mvc\Entity\Video;
+use Alura\Mvc\Repository\VideoRepository;
+
 $dbPath = __DIR__ . '/database.sqlite';
 $pdo = new PDO("sqlite:$dbPath");
 
@@ -12,15 +15,9 @@ if ($url === false) {
 
 $title = $_POST['titulo'];
 
-$qry = "
-    INSERT INTO VID010 (VID_URL, VID_TITLE) VALUES (:url, :title);
-";
+$repository = new VideoRepository($pdo);
 
-$stmt = $pdo->prepare($qry);
-$stmt->bindValue(':url', $url);
-$stmt->bindValue(':title', $title);
-
-if ($stmt->execute() === false) {
+if ($repository->add(new Video($url, $title)) === false) {
     header('Location: /?success=0');
 
 } else {
