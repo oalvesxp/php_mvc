@@ -20,7 +20,7 @@
     <header>
 
         <nav class="cabecalho">
-            <a class="logo" href="../"></a>
+            <a class="logo" href="/"></a>
 
             <div class="cabecalho__icones">
                 <a href="./enviar-video.php" class="cabecalho__videos"></a>

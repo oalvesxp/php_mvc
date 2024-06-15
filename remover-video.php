@@ -13,9 +13,9 @@ $stmt = $pdo->prepare($qry);
 $stmt->bindValue(':id', $id);
 
 if ($stmt->execute() === false) {
-    header('Location: /index.php?success=0');
+    header('Location: /?success=0');
 
 } else {
-    header('Location: /index.php?success=1');
+    header('Location: /?success=1');
 
 }
