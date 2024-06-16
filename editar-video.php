@@ -1,11 +1,14 @@
 <?php
 
+use Alura\Mvc\Entity\Video;
+use Alura\Mvc\Repository\VideoRepository;
+
 $dbPath = __DIR__ . '/database.sqlite';
 $pdo = new PDO("sqlite:$dbPath");
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
-if ($id === false){
+if ($id === false || $id === null){
     header("Location: ./index.php?success=0");
     exit();
 }
@@ -19,19 +22,15 @@ if ($url === false) {
 
 $title = $_POST['titulo'];
 
-$qry = "
-    UPDATE VID010 SET VID_URL = :url, VID_TITLE = :title WHERE VID_ID = :id;
-";
+$video = new Video($url, $title);
+$video->setId($id);
 
-$stmt = $pdo->prepare($qry);
-$stmt->bindValue(':url', $url);
-$stmt->bindValue(':title', $title);
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$repository = new VideoRepository($pdo);
 
-if ($stmt->execute() === false) {
-    header('Location: /index.php?success=0');
+if ($repository->update($video) === false) {
+    header('Location: /?success=0');
 
 } else {
-    header('Location: /index.php?success=1');
+    header('Location: /?success=1');
 
 }
