@@ -1,24 +1,28 @@
-<?php 
+<?php
+
+use Alura\Mvc\Repository\VideoRepository;
 
 $dbPath = __DIR__ . '/database.sqlite';
 $pdo = new PDO("sqlite:$dbPath");
-$videos = $pdo->query("SELECT * FROM VID010;")->fetchAll(PDO::FETCH_ASSOC);
+
+$repository = New VideoRepository($pdo);
+$videos = $repository->all();
 
 ?><?php require_once '_header.php';?>
     <ul class="videos__container" alt="videos alura">
         <?php foreach ($videos as $video): ?>
-            <?php if (str_starts_with($video['VID_URL'], 'http')): ?>
+            <?php if (str_starts_with($video->url, 'http')): ?>
                 <li class="videos__item">
-                    <iframe width="100%" height="72%" src="<?= $video['VID_URL']; ?>"
+                    <iframe width="100%" height="72%" src="<?= $video->url; ?>"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                     <div class="descricao-video">
                         <img src="./img/logo.png" alt="logo canal alura">
-                        <h3><?= $video['VID_TITLE']; ?></h3>
+                        <h3><?= $video->title; ?></h3>
                         <div class="acoes-video">
-                            <a href="/editar-video?id=<?= $video['VID_ID']; ?>">Editar</a>
-                            <a href="/remover-video?id=<?= $video['VID_ID']; ?>">Excluir</a>
+                            <a href="/editar-video?id=<?= $video->id; ?>">Editar</a>
+                            <a href="/remover-video?id=<?= $video->id; ?>">Excluir</a>
                         </div>
                     </div>
                 </li>
