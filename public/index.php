@@ -1,8 +1,13 @@
 <?php
 
 use Alura\Mvc\Controller\{
-    DeleteVideoController, EditVideoController, Error404Controller, 
-    NewVideoController, VideoFormController, VideoListController
+    Controller,
+    DeleteVideoController,
+    EditVideoController,
+    Error404Controller, 
+    NewVideoController, 
+    VideoFormController, 
+    VideoListController
 };
 use Alura\Mvc\Repository\VideoRepository;
 
