@@ -1,14 +1,6 @@
-<?php
-
-use Alura\Mvc\Repository\VideoRepository;
-
-$dbPath = __DIR__ . '/database.sqlite';
-$pdo = new PDO("sqlite:$dbPath");
-
-$repository = New VideoRepository($pdo);
-$videos = $repository->all();
-
-?><?php require_once '_header.php';?>
+<?php require_once __DIR__ . '/partials/_header.php';
+/** @var Video[] $videos */
+?>
     <ul class="videos__container" alt="videos alura">
         <?php foreach ($videos as $video): ?>
             <?php if (str_starts_with($video->url, 'http')): ?>
@@ -29,4 +21,4 @@ $videos = $repository->all();
             <?php endif; ?>
         <?php endforeach; ?>
     </ul>
-<?php require_once '_footer.php';?>
+<?php require_once __DIR__ . '/partials/_footer.php';
