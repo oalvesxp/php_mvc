@@ -13,11 +13,17 @@ $pdo = new PDO("sqlite:$dbPath");
         );
 ");*/
 
-$pdo->exec("
+/**$pdo->exec("
     CREATE TABLE USR010
         (
             USR_ID INTEGER PRIMARY KEY
             , USR_EMAIL VARCHAR
             , USR_PASSWD VARCHAR
         );
+");*/
+
+$pdo->exec("
+    ALTER TABLE VID010
+    ADD COLUMN
+        VID_IMGPATH VARCHAR;
 ");
