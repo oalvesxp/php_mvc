@@ -6,7 +6,11 @@ class LoginFormController implements Controller
 {
     public function processRequest(): void
     {
-        if($_SESSION['login'] === true) {
+        /** Verboso */
+        // if(!array_key_exists('login', $_SESSION) && _SESSION['login'] === true) {
+        
+        /** Não verboso */
+        if(($_SESSION['login'] ?? false) === true) {
             header('Location: /');
             return;
         }
