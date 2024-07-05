@@ -28,9 +28,7 @@ class LoginController implements Controller
         $passwdAuth = password_verify($passwd, $userData['USR_PASSWD'] ?? '');
 
         if ($passwdAuth) {
-            session_start();
             $_SESSION['login'] = true;
-            
             header('Location: /');
             
         } else {
