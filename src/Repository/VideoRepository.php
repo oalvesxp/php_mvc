@@ -18,13 +18,14 @@ class VideoRepository
     {
         $qry = "
             INSERT INTO VID010 
-                (VID_URL, VID_TITLE) 
-            VALUES (:url, :title);
+                (VID_URL, VID_TITLE, VID_IMGPATH) 
+            VALUES (:url, :title, :imagepath);
         ";
 
         $stmt = $this->pdo->prepare($qry);
         $stmt->bindValue(':url', $video->url);
         $stmt->bindValue(':title', $video->title);
+        $stmt->bindValue(':imagepath', $video->getFilePath());
 
         $this->pdo->beginTransaction();
 
