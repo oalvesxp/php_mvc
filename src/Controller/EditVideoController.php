@@ -36,9 +36,9 @@ class EditVideoController implements Controller
         $success = $this->repository->update($video);
 
         if ($success === false) {
-            header('Location: /?sucesso=0');
+            header('Location: /?success=0');
         } else {
-            header('Location: /?sucesso=1');
+            header('Location: /?success=1');
         }
     }
 }
