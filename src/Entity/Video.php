@@ -6,7 +6,7 @@ class Video
 {
     public readonly int $id;
     public readonly string $url;
-    public ?string $filePath = null;
+    private ?string $filePath = null;
 
     public function __construct
     (

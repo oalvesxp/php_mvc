@@ -33,7 +33,7 @@ class NewVideoController implements Controller
             $video->setFilePath($_FILES['image']['name']);
         }
 
-        $success = $this->repository->add(new Video($url, $title));
+        $success = $this->repository->add($video);
         if ($success === false) {
             header('Location: /?success=0');
             return;
