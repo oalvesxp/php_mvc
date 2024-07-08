@@ -18,13 +18,14 @@ class VideoRepository
     {
         $qry = "
             INSERT INTO VID010 
-                (VID_URL, VID_TITLE) 
-            VALUES (:url, :title);
+                (VID_URL, VID_TITLE, VID_IMGPATH) 
+            VALUES (:url, :title, :imagepath);
         ";
 
         $stmt = $this->pdo->prepare($qry);
         $stmt->bindValue(':url', $video->url);
         $stmt->bindValue(':title', $video->title);
+        $stmt->bindValue(':imagepath', $video->getFilePath());
 
         $this->pdo->beginTransaction();
 
@@ -74,9 +75,14 @@ class VideoRepository
     /** @return bool - Atualização de vídeos*/
     public function update(Video $video): bool
     {
+        $imgPathSql = '';
+        if($video->getFilePath() !== null){
+            $imgPathSql = ", VID_IMGPATH = :imagepath";
+        }
+
         $qry = "
             UPDATE VID010 
-            SET VID_URL = :url, VID_TITLE = :title 
+            SET VID_URL = :url, VID_TITLE = :title $imgPathSql
             WHERE VID_ID = :id;
         ";
         
@@ -85,6 +91,10 @@ class VideoRepository
         $stmt->bindValue(':title', $video->title);
         $stmt->bindValue(':id', $video->id, PDO::PARAM_INT);
 
+        if($video->getFilePath() !== null){
+            $stmt->bindValue(':imagepath', $video->getFilePath());
+        }
+        
         $this->pdo->beginTransaction();
         
         try{
@@ -138,6 +148,10 @@ class VideoRepository
     {
         $video = new Video($data['VID_URL'], $data['VID_TITLE']);
         $video->setId($data['VID_ID']);
+
+        if($data['VID_IMGPATH'] !== null ){
+           $video->setFilePath($data['VID_IMGPATH']); 
+        }
 
         return $video;
     }
