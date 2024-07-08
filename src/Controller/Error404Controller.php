@@ -2,10 +2,10 @@
 
 namespace Alura\Mvc\Controller;
 
-class Error404Controller implements Controller
+class Error404Controller extends ControllerHTML implements Controller
 {
     public function processRequest(): void
     {
-        require_once __DIR__ . '/../../views/error-404.php';
+        $this->renderTemplate('error-404.php');
     }
 }
