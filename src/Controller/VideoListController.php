@@ -12,7 +12,7 @@ class VideoListController extends ControllerHTML implements Controller
     public function processRequest(): void
     {
         $videos = $this->repository->all();
-        $this->renderTemplate(
+        echo $this->renderTemplate(
             'video-list.php',
             ['videos' => $videos],
         );

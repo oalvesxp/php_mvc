@@ -6,6 +6,6 @@ class Error404Controller extends ControllerHTML implements Controller
 {
     public function processRequest(): void
     {
-        $this->renderTemplate('error-404.php');
+        echo $this->renderTemplate('error-404.php');
     }
 }

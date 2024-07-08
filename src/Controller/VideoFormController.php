@@ -19,7 +19,7 @@ class VideoFormController extends ControllerHTML implements Controller
             $video = $this->repository->find($id);
         }
 
-        $this->renderTemplate(
+        echo $this->renderTemplate(
             'video-form.php',
             ['video' => $video],
         );

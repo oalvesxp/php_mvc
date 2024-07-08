@@ -14,6 +14,7 @@ class LoginFormController extends ControllerHTML implements Controller
             header('Location: /');
             return;
         }
-        $this->renderTemplate('login-form.php');
+        
+        echo $this->renderTemplate('login-form.php');
     }
 }
